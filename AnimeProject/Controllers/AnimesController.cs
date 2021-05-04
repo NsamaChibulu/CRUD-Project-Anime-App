@@ -21,8 +21,8 @@ namespace AnimeProject.Controllers
         //Read
         public IActionResult Index()
         {
-            var allAnimes = dbContext.Animes.ToList();
-            return View(allAnimes);
+            var allanimes = dbContext.Animes.ToList();
+            return View(allanimes);
         }
         [Route("details/{id:int}")]
         public IActionResult Details(int id)
@@ -47,15 +47,14 @@ namespace AnimeProject.Controllers
         {
             var animeToUpdate = dbContext.Animes.FirstOrDefault(c => c.ID == id);
             animeToUpdate.Name = anime.Name;
-
             animeToUpdate.Episodes = anime.Episodes;
             animeToUpdate.Adaptation = anime.Adaptation;
             animeToUpdate.AiringDay = anime.AiringDay;
+            animeToUpdate.PictureURL = anime.PictureURL;
             dbContext.SaveChanges();
             return RedirectToAction("Index");
 
         }
-
 
         //Delete
         [Route("delete/{id:int}")]

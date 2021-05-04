@@ -12,7 +12,8 @@ namespace AnimeProject.Models
 
         public int Episodes { get; set; }
         public Adaptation Adaptation { get; set; }
-        public string AiringDay { get; set; }
+        public AiringDay AiringDay { get; set; }
+        public string PictureURL { get; set; }
 
         public virtual Month Month { get; set; }
         //creates relations 

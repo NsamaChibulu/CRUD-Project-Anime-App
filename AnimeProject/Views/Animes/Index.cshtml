@@ -1,0 +1,60 @@
+﻿@model IEnumerable<AnimeProject.Models.Anime>
+
+    @{
+        ViewData["Title"] = "Index";
+    }
+
+    <h1>Index</h1>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Episodes)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Adaptation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AiringDay)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PictureURL)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Episodes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Adaptation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AiringDay)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Update", new { id = item.ID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID }) |
+
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>

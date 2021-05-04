@@ -77,7 +77,8 @@ namespace AnimeProject.Controllers
                 Episodes = bindingModel.Episodes,
                 Adaptation = bindingModel.Adaptation,
                 Month= dbContext.Months.FirstOrDefault(c => c.ID == bindingModel.MonthID),
-                AiringDay = bindingModel.AiringDay
+                AiringDay = bindingModel.AiringDay,
+                PictureURL = "https://i.pinimg.com/474x/84/aa/0d/84aa0dadd6cbd869bf40397a1a59e4cb.jpg"
 
             };
             dbContext.Animes.Add(animeToCreate);
