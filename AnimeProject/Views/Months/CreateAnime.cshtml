@@ -1,0 +1,61 @@
+﻿@model AnimeProject.Models.Binding.AddAnimeBindingModel
+
+@{
+    ViewData["Title"] = "Create Anime";
+
+}
+
+<h1>Create New Anime for @ViewBag.MonthDate</h1>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateAnime">
+            <div asp-validation-summary="ModelOnly" class="tex-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="tex-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Episodes" class="control-label"></label>
+                <input asp-for="Episodes" class="form-control" />
+                <span asp-validation-for="Episodes" class="tex-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AiringDay" class="control-label"></label>
+                <select asp-for="AiringDay" class="form-control">
+                    <option value="1">Monday</option>
+                    <option value="2">Tuesday</option>
+                    <option value="3">Wednesday</option>
+                    <option value="4">Thursday</option>
+                    <option value="5">Friday</option>
+                    <option value="6">Saturday</option>
+                    <option value="7">Sunday</option>
+                </select>
+                <span asp-validation-for="AiringDay" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Adaptation" class="control-label"></label>
+                <select asp-for="Adaptation" class="form-control">
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
+                </select>
+                <span asp-validation-for="Adaptation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="Submit" value="Save" class="btn btn-primary" />
+
+            </div>
+
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index" asp-controller="Animes">Back to All Animes</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
