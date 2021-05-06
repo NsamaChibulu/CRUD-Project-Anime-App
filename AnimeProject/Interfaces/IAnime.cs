@@ -1,11 +1,12 @@
-﻿using System;
+﻿using AnimeProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AnimeProject.Models
+namespace AnimeProject.Interfaces
 {
-    public class Anime
+    public interface IAnime
     {
         public int ID { get; set; }
         public string Name { get; set; }
@@ -14,9 +15,5 @@ namespace AnimeProject.Models
         public Adaptation Adaptation { get; set; }
         public AiringDay AiringDay { get; set; }
         public string PictureURL { get; set; }
-
-        public virtual Month Month { get; set; }
-        public int  MonthID { get; set;  }
-        //creates relations 
     }
 }
