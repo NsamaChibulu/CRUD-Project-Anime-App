@@ -16,7 +16,8 @@ namespace TestProject1
     {
         private Mock<IRepositoryWrapper> mockRepo;
         private Month month;
-        private AddMonth _addMonth;
+        private AddMonth addMonth;
+        private AddAnime addAnime;
         private UpdateMonth updateMonth;
         private List<Month> months;
         private Mock<IUpdateMonth> updateMonthMock;
@@ -77,13 +78,58 @@ namespace TestProject1
 
         }
 
-     
+        [Fact]
+        public void AddMonth_Test()
+        {
+            //Arrange 
+            mockRepo.Setup(repo => repo.Months.FindByCondition(c => c.ID == It.IsAny<int>())).Returns(GetMonths());
+
+            // ACt (call the controller)
+
+            var controllerActionResult = new MonthsController(mockRepo.Object).Create();
+            //assert
+            Assert.NotNull(controllerActionResult);
+  }
+
+        //[fact]
+
+        //internal void addanime_test()
+        //{
+        //    //arrange 
+        //    mockrepo.setup(repo => repo.months.findbycondition(c => c.id == it.isany<int>())).returns(getmonths());
+
+        //    // act (call the controller)
+
+        //    var controlleractionresult = new monthscontroller(mockrepo.object).create(animetocreate);
+        //    //assert
+        //    assert.notnull(controlleractionresult);
+        //}
+
+        //[Fact]
+        //public void GetAllAnime_Test()
+        //{
+        //    //arrange
+        //    mockRepo.Setup(repo => repo.Months.FindAll()).Returns((IEnumerable<Month>)GetAnimes());
+        //    mockRepo.Setup(repo => repo.Animes.FindByCondition(c => c.MonthID == It.IsAny<int>())).Returns(GetAnimes());
+
+        //    // ACt (call the controller)
+
+        //    var controllerActionResult = new MonthsController(mockRepo.Object).Index();
+        //    //assert
+        //    Assert.NotNull(controllerActionResult);
+
+
+        //}
+
+
+
+
         private IEnumerable<Anime> GetAnimes()
         {
             return new List<Anime>()
             {
-                new Anime { ID = 1, Month = GetMonths().ToList()[0] },
-                 new Anime { ID = 1, Month = GetMonths().ToList()[1] },
+                new Anime() { ID = 1, Month = GetMonths().ToList()[0] },
+                 
              };
         }
 
