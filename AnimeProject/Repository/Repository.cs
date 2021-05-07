@@ -44,5 +44,10 @@ namespace AnimeProject.Repository
         {
             return RepositoryContext.Set<T>().Update(item).Entity;
         }
+
+        public T CreateAnime(T item)
+        {
+            return RepositoryContext.Set<T>().Add(item).Entity;
+        }
     }
 }

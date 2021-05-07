@@ -74,10 +74,10 @@ namespace AnimeProject.Controllers
 
         public IActionResult CreateAnime(int monthID)
         {
-            var month = repository.Months.FindByCondition(c => c.ID == monthID).FirstOrDefault();
+            var month = repository.Months.FindByCondition(c => c.ID == monthID);
             //var month = dbContext.Months.FirstOrDefault(c => c.ID == monthID);
-            ViewBag.MonthDate = month.Date;
-            ViewBag.MonthID = month.ID;
+            ViewBag.MonthDate = month.ToList()[0].Date;
+            ViewBag.MonthID = month.ToList()[0].ID;
             return View();
         }
         [HttpPost]

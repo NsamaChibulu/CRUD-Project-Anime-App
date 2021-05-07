@@ -23,10 +23,12 @@ namespace TestProject1
         private Mock<IUpdateMonth> updateMonthMock;
         private Mock<IMonth> monthMock;
         private List<IMonth> monthsMock;
+        private Mock<IAddAnime> addAnimesMock;
         private Mock<IAddMonth> addMonthsMock;
         private Mock<IUpdateMonth> updateMonthsMock;
         private Mock<IViewMonth> monthViewModelMock;
         private List<IViewMonth> monthsViewModelsMock;
+        private MonthsController monthsController;
 
         public MonthsControllerTest() {
             //declare what mocks to use 
@@ -36,6 +38,7 @@ namespace TestProject1
             monthsMock = new List<IMonth> { monthMock.Object };
             addMonthsMock = new Mock<IAddMonth>();
             updateMonthsMock = new Mock<IUpdateMonth>();
+            addAnimesMock = new Mock<IAddAnime>();
             month = new Month();
             months = new List<Month>();
 
@@ -53,7 +56,7 @@ namespace TestProject1
 
             mockRepo = new Mock<IRepositoryWrapper>();
             var allMonths = GetMonths();
-            var monthsController = new MonthsController(mockRepo.Object);
+            monthsController = new MonthsController(mockRepo.Object);
 
 
         }
@@ -68,7 +71,6 @@ namespace TestProject1
             //arrange
           mockRepo.Setup(repo=> repo.Months.FindAll()).Returns(GetMonths);
             mockRepo.Setup(repo => repo.Animes.FindByCondition(c => c.MonthID == It.IsAny<int>())).Returns(GetAnimes());
-
             // ACt (call the controller)
 
             var controllerActionResult = new MonthsController(mockRepo.Object).Index();
@@ -77,6 +79,22 @@ namespace TestProject1
 
 
         }
+        //[Fact]
+        //public void AddAnime_Test()
+        //{
+        //    //Arrange 
+        //    mockRepo.Setup(repo => repo.Months.FindByCondition(c => c.ID == It.IsAny<int>())).Returns(GetMonths());
+        //    mockRepo.Setup(repo => repo.Animes.FindByCondition(c => c.ID == It.IsAny<int>())).Returns(GetAnimes());
+        //    //var month=mockRepo.Setup(repo => repo.Months.FindByCondition(c => c.ID == It.IsAny<int>())).Returns(GetMonths());
+
+        //    // ACt (call the controller)
+        //    //mockRepo.Verify(r => r.Months.FindByCondition(c => c.ID == It.IsAny<int>()));
+        //    var controllerActionResult = monthsController.CreateAnime(addAnime, 1);
+            
+        //    //assert
+        //    Assert.NotNull(controllerActionResult);
+
+        //}
 
         [Fact]
         public void AddMonth_Test()
@@ -89,7 +107,31 @@ namespace TestProject1
             var controllerActionResult = new MonthsController(mockRepo.Object).Create();
             //assert
             Assert.NotNull(controllerActionResult);
-  }
+  
+        }
+        [Fact]
+        public void DeleteMonth_Test()
+        {
+            //Arrange
+            mockRepo.Setup(repo => repo.Months.FindByCondition(c => c.ID == It.IsAny<int>())).Returns(GetMonths());
+            mockRepo.Setup(repo => repo.Months.Delete(GetMonth()));
+            //Act
+            var controllerActionResult = new MonthsController(mockRepo.Object).Delete(It.IsAny<int>());
+            //Assert
+            Assert.NotNull(controllerActionResult);
+        }
+        [Fact]
+        public void UpdateMonth_Test()
+        {
+            //Arrange
+            mockRepo.Setup(repo => repo.Months.FindByCondition(c => c.ID == It.IsAny<int>())).Returns(GetMonths());
+            mockRepo.Setup(repo => repo.Months.Update(GetMonth()));
+            //Act
+            var controllerActionResult = new MonthsController(mockRepo.Object).Update(It.IsAny<int>());
+            //Assert
+            Assert.NotNull(controllerActionResult);
+        }
+
 
         //[fact]
 
@@ -124,12 +166,14 @@ namespace TestProject1
 
 
 
+
+
         private IEnumerable<Anime> GetAnimes()
         {
             return new List<Anime>()
             {
                 new Anime() { ID = 1, Month = GetMonths().ToList()[0] },
-                 
+
              };
         }
 

@@ -12,6 +12,8 @@ namespace AnimeProject.Interfaces
         IEnumerable<T> FindByCondition(Expression<Func<T, bool>> expression); // memeber delegates 
         T Create(T item);
         T Update(T item);
+        T CreateAnime(T item);
+
         void Delete(T item);
 
 
