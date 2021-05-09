@@ -18,18 +18,45 @@ By Nsama Chibulu
 
 ## Brief
 
-For my SFIA project, I decided to create an app that tracks the animes I watch monthly. As someone who can finish a shwo in one sitting, I find it hard to remember what anime I've watched, the ones I do want to watch, and the ones I am currently watching. Thus, I beleieve thsi application would personally help me in making sure I know what animes I am watching monthly. 
+For my SFIA project, I decided to create an app that tracks the animes I watch monthly. As someone who can finish a show in one sitting, I find it hard to remember what anime I've watched, the ones I do want to watch, and the ones I am currently watching. Thus, I beleieve this application would personally help me keep track with all the ones I am watching. I have a similiar issues in regards to Korean Dramas, and had planend to incoporate a third table to shwcase my kdramas. However, with the time constraint, I was unable to create this third table.  The app is intended to be public and be of a CRUD nature (Create, Delete, Update and Delete). 
 
-The app is intended to be public and be of a CRUD nature (Create, Delete, Update and Delete) and will utilize databases store and manage information. 
 
-The purpose of the software to be created is to allow the user to access a web application hosted in the cloud (Azure). The web application to be created will have the following functionalities.
--	Will allow the user to create, delete , read and update information on each of the pages (Month and Anime).
--	Will feature a mySQL database, hosted in Azure mySQL Databases, and will have two tables, Month (Parent) and Anime(Child).
--	Will have an Angular frontend written in JavaScript , CSS and HTML. As a stretch goal, this will be implemented only if time allows. If not, a frontend in C# would be okay for the MVP.
--	Backend to be written in C#/ASP.NET.
--	Once built, the application will then be tested in the Testing Environment of Azure DevOps. Jasmin will be used if the frontend is in Angular. If not, testing will be done in 
--	The application will then be deployed on Azure App Service. 
--	The code will continuously be pushed to GiHub when major changes occur as that will be my Version Control System throughout the entire project. 
+
+
+# Project Requirements
+
+
+The project, which utilizes the SFIA Framework and SDLC was given to us to showcase our skills and create a CRUD (Create, Read, Update and Delete) application.  On the specification, certain requirements for the project were needed to be able to produce a MVP.
+
+Requirements : MoSCow
+
+Must Haves. 
+-	A Kanban board detailing the whole project management aspect, featuring user stories, cases and task.
+-	The application must be a CRUD app. This means that’s you, the user, must be able to create an entry, read the entry , update the entry and delete the entry. 
+-	The app must draw out information from a MySQL relational database. There must be two tables MINIMUM. 
+-	The app must be created in C#, with a backend and frontend. 
+-	There must be Test suites available for the backend and front end programming, to ensure high test coverage in the backend.
+-	Code must be then fully integrated into a Version Control System, to be built through a command line server and deployed to a virtual machine with CI pipleines. 
+-	Documentation must also be provided to that describe the full design and architecture of the project. 
+-	Must included a Risk assessment within the documents. 
+-	Must be submitted as a README.md file on the 10th May at 9am. 
+
+
+Should be’s/have.
+-	A record of all issues encountered within the Kanban board, to track issues and risks that have occurred.
+-	App should be user friendly, have clear syntax on the interactive pages and should have easy accessibility to necessary pages. 
+-	Should be using GitHub as the Version Control system as this would be easier and familiar to use. 
+-	Time constraints on each individual epic/user story/task so that it will be possible to provide of required material by the deadline. 
+-	Front end done on ASP.NET
+
+Could be’s/Have.
+-	A front end designed on Angular.
+-	Use a Jira software for the Kanban Board, as this can be integrated into GitHub for easy access and view. 
+-	Have more than 2 tables in SQL, ideally as many needed to capture the data required to make the app perform how it should. 
+Would be’s/Have
+-	Enjoyable to use by customer. 
+-	Can be accessed on all devices. 
+
 
 ## Project Tracking
 For the tracking of the porject, two boards where used. One was a Kanban Board hosted on Jira, the next was a scrum board hosted on Azure DevOpds.
@@ -48,8 +75,7 @@ Sprint 3;
 
 
 ## Risk Assessment
-Before the or any design work occured, a Risk Assesment was constructed to highlight possible issues that could have major impacts on the project. 
-
+Before any work could be carried out, a Risk Assessment was created. 
 ![image](https://user-images.githubusercontent.com/82107226/117543785-3b901700-b016-11eb-843a-ff0a5bbb7fde.png)
 
 
