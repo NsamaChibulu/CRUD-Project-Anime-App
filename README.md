@@ -188,7 +188,7 @@ For the frontend , Angular would've been the best option. Not only would it have
 - "If theres ever an issue, Let the customer know"
 One thing I did not do well is express my concerns about the project with my instructors until it was too late. For future projects, I will ensure that I am constantly updating my client if there are any concerns.
 
--Time management 
+- Time management 
 To esnure that time managementproperly performed, I will ensure I know the time lenght of each task, instead of assuming and guessing. This will ensure that I have the right amount of time for each task, preventing me from fallling behind andstressing myself out with worry that I wont be able to complete a requirement. 
 
 - Linking the pages
