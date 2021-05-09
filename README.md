@@ -62,8 +62,8 @@ Would be’s/Have
 For the tracking of the porject, two boards where used. One was a Kanban Board hosted on Jira, the next was a scrum board hosted on Azure DevOpds.
 ![image](https://user-images.githubusercontent.com/82107226/117542433-89a21c00-b010-11eb-8690-8ef3b425d3af.png)
 
-On the above Jira Board, I was able to obtian a visual Roadmap which showcased the different Epics (in purple) that I was required to work on. Benethe them was the Stories(in Green) thats were linked to that specific epic, followed by task. This board was great for visually seeing where my project was in terms of past, present and futre workloads and deadlines. However, I decided to go with Azure DevOps to ensure that my developing, delivering and sustaining was monitored through sprints.Azure DevOps was my chosen software for my scrum board as it easily allows me to store repos , create pipleines and moitor sprints.
-Throughtout the projects, there were three sprints; Planning(which included design), Buiilding and Testing/Deployment of the application. 
+On the above Jira Board, I was able to obtian a visual Roadmap which showcased the different Epics (in purple) that I was required to work on. Benethe them was the Stories(in Green) thats were linked to that specific epic, followed by task. This board was great for visually seeing where my project was in terms of past, present and futre workloads and deadlines. However, I decided to go with Azure DevOps to ensure that my developing, delivering and sustaining was monitored through sprints.Azure DevOps was my chosen software for my scrum board as it easily allows me to store repos , create pipleines and monitor sprints.
+Throughtout the projects, there were three sprints; Planning(which included design), Building and Testing/Deployment of the application. 
 Sprint 1 ; 
 ![image](https://user-images.githubusercontent.com/82107226/117543710-d805e980-b015-11eb-8096-1a04b409bc36.png)
 
@@ -81,14 +81,14 @@ Before any work could be carried out, a Risk Assessment was created.
 
 ## Architecture- User Interaction 
 
-One thing I wanted my app to have was ease of accessibility. I wanted to create an app which is easy to use and secure. Below is a flow chart on how I want my user to interact with my app ont their first instance. 
+One thing I wanted my app to have was ease of accessibility. I wanted to create an app which is easy to use and secure. Below is a flow chart on how I wanted my user to interact with my app on their first instance. 
 
 ![image](https://user-images.githubusercontent.com/82107226/117544230-64191080-b018-11eb-824e-3957d7ca31d9.png)
 
 
 ## Architecture - Databases
 
-The application will run on one SQL database called "Proanime". This databsse is hosted in Azure Database for MySQL. 
+The application will run on one MySQL database called "Proanime". This databsse is hosted in Azure Database for MySQL. 
 ![image](https://user-images.githubusercontent.com/82107226/117544351-f3262880-b018-11eb-8e5e-e9f965cebbf0.png)
 The database has two tables; Months and Animes. Months is the parent table and Animes is the child table. This means that, an Anime cannot be created unless it is linked to Month entry. A Month can have many animes, but an anime cannot be assigned to multiple months.
 
@@ -107,7 +107,7 @@ Below is the Entity-Relationship Diagram (ERD). Here we can visually see the rel
 
 ## Build 
 
-The back and frontend build of the applciation was done within Visual Studio, using C# for the ASP.NET Core framework and Java/HTML for the viewing pages. To create the app, we used ASP.NET Core WebA APP (Model-Control-View). This allowed us to create the app whilst havign access to the layout, logic and display of the application. 
+The back and frontend build of the application was done within Visual Studio, using C# for the ASP.NET Core framework and Java/HTML for the viewing pages. To create the app, we used ASP.NET Core WebA APP (Model-Control-View). This allowed us to create the app whilst having access to the layout, logic and display of the application. 
 The application contains two controllers; MonthsController and AnimesController. This is where a majoirty of the my logis was found. 
 
 ![image](https://user-images.githubusercontent.com/82107226/117545894-a134d100-b01f-11eb-891a-6fd2aca6e1fc.png)
@@ -154,7 +154,7 @@ View Details
 
 ## Testing 
 
-For testing, the xUnit framework was used to carry out the unit testing. The follwwing image shows the tests run and also what was being tested.
+For testing, the xUnit framework was used to carry out the unit testing. The following image shows the tests run and also what was being tested.
 
 ![image](https://user-images.githubusercontent.com/82107226/117546123-d857b200-b020-11eb-912e-56fa46844c93.png)
 
@@ -174,7 +174,7 @@ However, the pipeline failled to run to due to the follwoign error. Given the ti
 ![image](https://user-images.githubusercontent.com/82107226/117546635-4604dd80-b023-11eb-90b6-22eea73fe3a1.png)
 
 - Low Test Coverage
-When it came to performing tests, my line coverage was very low. For an application to be exceptional, all logic within the application should be tested. That is, where you're telling the app to do something, there must be a test in place to ensure that it is actually doing it. As I only thought that the contorllers held such commands, I was proven wrong with the low figures. Esepcially within my controllers, where I was not able to test both Create methods (the CreateAnime method was consistently failing but I was able to create an anime, meaning my syntax for that speicifc test was wrong).
+When it came to test performance, my line coverage was very low. For an application to be exceptional, all logic within the application should be tested. That is, where you're telling the app to do something, there must be a test in place to ensure that it is actually doing it. As I only thought that the contorllers held such commands, I was proven wrong with the low figures. Especially within my controllers, where I was not able to test only one Create method(the CreateAnime method was consistently failing but I was able to create an anime, meaning my syntax for that speicifc test was wrong).
 
 - Time
 Throughout the entire project, it was evident that time was an issue. With tasks taking longer than expected (espeically testing), I found myself rushing and not being able to go back and make the desired changed I wanted
