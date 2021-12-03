@@ -39,7 +39,7 @@ Must Haves.
 -	Code must be then fully integrated into a Version Control System, to be built through a command line server and deployed to a virtual machine with CI pipleines. 
 -	Documentation must also be provided to that describe the full design and architecture of the project. 
 -	Must included a Risk assessment within the documents. 
--	Must be submitted as a README.md file on the 10th May at 9am. 
+
 
 
 Should be’s/have.
